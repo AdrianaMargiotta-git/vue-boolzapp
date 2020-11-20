@@ -159,4 +159,16 @@ body { /* per centrare il container */
     color: #b5b9bb;
 }
 
-    /* row contatti */
+    /* conversazioni row contatti */
+.container-sx .conversazioni {
+    background-color: #ffffff;
+}
+
+.container-sx .conversazioni {
+    overflow-y: scroll;
+    height: calc(100% - 150px);
+}
+
+.text-config{
+    color: #447587;
+}
