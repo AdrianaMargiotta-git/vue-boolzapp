@@ -6,6 +6,11 @@
 
 
 /************** general rules for containers **************/
+body { /* per centrare il container */
+    padding-top: calc(5vh / 2);
+    position: relative;
+}
+
 .riga-verde{
     height: 15vh;
     width: 100vw;
@@ -29,17 +34,129 @@
     width: 80vw;
     position: relative;
     z-index: 2;
-    background-color: red; /*da cambiare*/
+    background-color: white;
     margin: auto;
     display: flex;
 }
 
 .container-sx{
     width: 35%;
-    background-color: lightcoral;
+    background-color: lightcoral; /*da cambiare*/
 }
 
 .container-dx{
     width: 65%;
-    background-color: lightgreen;
+    background-color: lightgreen; /*da cambiare*/
 }
+
+.icon-circle{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 4px auto auto auto;
+}
+
+/************* general rules for container-sx *************/
+.container-sx .row{
+    width: 100;
+    height: 50px;
+    /* background-color: #eaeaea; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.container-sx .row .row-sx{
+    width: 50px;
+    height: 100%;
+    /* background-color: lightslategray; da cancellare */
+    /* float: left; */
+    text-align: center;
+    line-height: 50px;
+}
+
+.container-sx .row .row-cn{
+    width: calc(100% - 150px);
+    height: 100%;
+    padding-left: 6px;
+    /* background-color: lightpink; da cancellare */
+    /* float: left;
+    text-align: left; */
+    /* line-height: 50px; */
+}
+
+.container-sx .row .row-dx{
+    width: 100px;
+    height: 100%;
+    /* background-color: blanchedalmond; da cancellare */
+    /* float: left; */
+    text-align: center;
+    line-height: 50px;
+}
+
+/************particular rules for container-sx ***********/
+    /* row colore-grigio */
+.container-sx .row.colore-grigio .row-cn{
+    line-height: 50px;
+}
+
+.container-sx .row.colore-grigio .row-dx i {
+    padding: 0 5px;
+    color: #b1b1b1;
+}
+
+.container-sx .row.colore-grigio{
+    background-color: #eaeaea;
+}
+
+    /* row colore-celeste */
+.container-sx .row.colore-celeste .row-sx i {
+    padding: 0 5px;
+    font-size: 28px;
+    color: #76dcff;
+    border-radius: 45%;
+    background-color: white;
+}
+
+.container-sx .row.colore-celeste{
+    background-color: #76dcff;
+}
+
+#notifica{
+    text-decoration: underline;
+    color: #447587;
+}
+
+    /* row searchbar */
+.container-sx .row.searchbar{
+    line-height: 50px;
+    background-color: #eaeaea
+}
+
+.container-sx .row.colore-celeste .row-sx i {
+    padding: 0 5px;
+    font-size: 28px;
+    color: #76dcff;
+    border-radius: 45%;
+    background-color: white;
+}
+
+.container-sx .row.searchbar .row-cn {
+    width: calc(100% - 50px);
+}
+
+.container-sx .row.searchbar .row-cn input {
+    width: 98%;
+    height: 80%;
+    padding-left: 4px;
+}
+
+.container-sx .row.searchbar .row-sx i {
+    padding: 0 5px;
+    font-size: 25px;
+    color: #b5b9bb;
+}
+
+    /* row contatti */

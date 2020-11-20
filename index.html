@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Boolzapp</title>
 </head>
 <body>
@@ -19,6 +20,57 @@
         <!-- container sx -->
         <div class="container-sx">
 
+            <!-- parte user generale -->
+            <div class="row colore-grigio">
+                <div class="row-sx">
+                    <img src="img/avatar_io.jpg" alt="avatario" class="icon-circle">
+                </div>
+                <div class="row-cn">
+                    <strong>Adriana</strong>
+                </div>
+                <div class="row-dx">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- parte vuoi ricevere le notifiche -->
+            <div class="row colore-celeste">
+                <div class="row-sx">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="row-cn">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong>
+                    <br><p id="notifica">Attiva notifiche desktop</p>
+                </div>
+            </div>
+
+            <!-- parte search contatti -->
+            <div class="row searchbar">
+                <div class="row-sx">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="row-cn">
+                    <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+
+            <!-- parte contatti attivi-->
+            <div class="row contatti">
+                <div class="row-sx">
+                    <img src="img/avatar_io.jpg" alt="avatario" class="icon-circle">
+                </div>
+                <div class="row-cn">
+                    <strong>Adriana</strong>
+                </div>
+                <div class="row-dx">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
         </div>
 
         <!-- container dx -->
@@ -27,9 +79,6 @@
         </div>
         
     </div>
-
-
-
 
 
     <script src="js/script.js"></script>
