@@ -112,18 +112,18 @@ body { /* per centrare il container */
     color: #447587;
 }
 
-    /* row searchbar */
-.container-sx .row.searchbar{
-    line-height: 50px;
-    background-color: #eaeaea
-}
-
 .container-sx .row.colore-celeste .row-sx i {
     padding: 0 5px;
     font-size: 28px;
     color: #76dcff;
     border-radius: 45%;
     background-color: white;
+}
+
+    /* row searchbar */
+.container-sx .row.searchbar{
+    line-height: 50px;
+    background-color: #eaeaea
 }
 
 .container-sx .row.searchbar .row-cn {
@@ -144,16 +144,49 @@ body { /* per centrare il container */
 
     /* conversazioni row contatti */
 .container-sx .conversazioni {
+    overflow-y: auto;
+    height: calc(100% - 150px);
     background-color: #ffffff;
 }
 
-.container-sx .conversazioni {
-    overflow-y: auto;
-    height: calc(100% - 150px);
+.sezione {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 10px;
+    width: 100%;
+}
+    
+.container-sx .conversazioni .contatti{
+    display: flex;
+    align-items: center;
+}
+    
+.row-sx-immagine {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.conversazioni .row-sx-immagine {
+    background-size: 50px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 .text-config{
-    color: #447587;
+    color: #b5b9bb;
+}
+
+.conversazioni .sezione span {
+    font-size: 16px;
+    color: #b5b9bb;
+    text-align: right;
 }
 
 /************general rules for container-dx ***********/

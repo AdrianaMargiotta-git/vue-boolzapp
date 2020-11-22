@@ -10,209 +10,113 @@
 </head>
 <body>
 
-    <!-- due righe -->
-    <div class="riga-verde"></div>
-    <div class="riga-grigia"></div>
+    <div id="root">
 
-    <!-- container generale -->
-    <div class="container">
-        
-        <!-- container sx -->
-        <div class="container-sx">
+            <!-- due righe -->
+        <div class="riga-verde"></div>
+        <div class="riga-grigia"></div>
 
-            <!-- parte user generale -->
-            <div class="row colore-grigio">
-                <div class="row-sx">
-                    <img src="img/avatar_io.jpg" alt="avatario" class="icon-circle">
+        <!-- container generale -->
+        <div class="container">
+            
+            <!-- container sx -->
+            <div class="container-sx">
+
+                <!-- parte user generale -->
+                <div class="row colore-grigio">
+                    <div class="row-sx">
+                        <img src="img/avatar_io.jpg" alt="avatario" class="icon-circle">
+                    </div>
+                    <div class="row-cn">
+                        <strong>Adriana</strong>
+                    </div>
+                    <div class="row-dx">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
-                <div class="row-cn">
-                    <strong>Adriana</strong>
+
+                <!-- parte vuoi ricevere le notifiche -->
+                <div class="row colore-celeste">
+                    <div class="row-sx">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="row-cn">
+                        <strong>Ricevi notifiche di nuovi messaggi</strong>
+                        <br><p id="notifica">Attiva notifiche desktop</p>
+                    </div>
                 </div>
-                <div class="row-dx">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
+
+                <!-- parte search contatti -->
+                <div class="row searchbar">
+                    <div class="row-sx">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="row-cn">
+                        <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
+
+                <!-- parte contatti attivi-->
+                <div class="conversazioni">
+                    <div class="sezione" v-for="(contatti, i) in contatti" v-if="contatti.visible">
+                        <div class="contatti">
+                            <div class="row-sx-immagine" :style="{ 'background-image': 'url(' + contatti.avatar  + ')' }"></div>
+                            <div>
+                                <strong>{{contatti.name}}</strong>
+                                <p class="text-config" v-html="contatti.messages[contatti.messages.length - 1].message">{{ contatti.messages[contatti.messages.length - 1].message }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <span>{{contatti.messages[contatti.messages.length - 1].date}}   {{contatti.messages[contatti.messages.length - 1].time}}</span>
+                        </div>
+                    </div> 
+                </div>
+
             </div>
 
-            <!-- parte vuoi ricevere le notifiche -->
-            <div class="row colore-celeste">
-                <div class="row-sx">
-                    <i class="fas fa-bell-slash"></i>
-                </div>
-                <div class="row-cn">
-                    <strong>Ricevi notifiche di nuovi messaggi</strong>
-                    <br><p id="notifica">Attiva notifiche desktop</p>
-                </div>
-            </div>
+            <!-- container dx -->
+            <div class="container-dx">
 
-            <!-- parte search contatti -->
-            <div class="row searchbar">
-                <div class="row-sx">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="row-cn">
-                    <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
-                </div>
-            </div>
-
-            <!-- parte contatti attivi-->
-            <div class="conversazioni">
-                <!-- prima riga -->
-                <div class="row contatti">
+                <!-- parte informazione chat visualizzata -->
+                <!-- in questo div non ci saranno contenuti fin quanto non si cliccherà su una chat attiva sulla sx -->
+                <div class="row information-chat">
                     <div class="row-sx">
-                        <img src="img/avatar_1.jpg" alt="avatar1" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Michele</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        19/11/2020
-                    </div>
-                </div>
-                <hr>
-                <!-- seconda riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_2.jpg" alt="avatar2" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Fabio</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        10:56:00
-                    </div>
-                </div>
-                <hr>
-                <!-- terza riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_3.jpg" alt="avatar1" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Samuele</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        10:58:49
-                    </div>
-                </div>
-                <hr>
-                <!-- quarta riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_4.jpg" alt="avatar4" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Dario</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        12:01:32
-                    </div>
-                </div>
-                <hr>
-                <!-- quinta riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_5.jpg" alt="avatar5" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Federico</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        10:35:00
-                    </div>
-                </div>
-                <hr>
-                <!-- sesta riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_6.jpg" alt="avatar6" class="icon-circle">
+                        <img src="img/avatar_6.jpg" alt="avatario" class="icon-circle-due">
                     </div>
                     <div class="row-cn">
                         <strong>Patrizia</strong>
-                        <p class="text-config">Ultimo messaggio</p>
+                        <p class="text-config-2">Ultimo accesso oggi 20/11/2020 alle 17:10:00</p>
                     </div>
                     <div class="row-dx">
-                        10:59:09
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <hr>
-                <!-- settima riga -->
-                <div class="row contatti">
+
+                <!-- parte dove viene visualizzata la conversazione -->
+                <div class="contenitore-messaggio"></div>
+                <!-- ci saranno tanti div quanti sono le conversazioni attive in questo 8 -->
+
+                <!-- parte dove inseriamo il messaggio -->
+                <div class="row insert-message">
                     <div class="row-sx">
-                        <img src="img/avatar_7.jpg" alt="avatar7" class="icon-circle">
+                        <i class="far fa-grin"></i>
                     </div>
                     <div class="row-cn">
-                        <strong>Rudy</strong>
-                        <p class="text-config">Ultimo messaggio</p>
+                        <input type="text" name="" id="" placeholder="Scrivi un nuovo messaggio">
                     </div>
                     <div class="row-dx">
-                        10:30:00
+                        <i class="fas fa-microphone-alt"></i>
                     </div>
                 </div>
-                <hr>
-                <!-- ottava riga -->
-                <div class="row contatti">
-                    <div class="row-sx">
-                        <img src="img/avatar_8.jpg" alt="avatar8" class="icon-circle">
-                    </div>
-                    <div class="row-cn">
-                        <strong>Marco</strong>
-                        <p class="text-config">Ultimo messaggio</p>
-                    </div>
-                    <div class="row-dx">
-                        10:00:00
-                    </div>
-                </div>
-                <hr>
-            </div>
 
+            </div>
+            
         </div>
 
-        <!-- container dx -->
-        <div class="container-dx">
-
-            <!-- parte informazione chat visualizzata -->
-            <!-- in questo div non ci saranno contenuti fin quanto non si cliccherà su una chat attiva sulla sx -->
-            <div class="row information-chat">
-                <div class="row-sx">
-                    <img src="img/avatar_6.jpg" alt="avatario" class="icon-circle-due">
-                </div>
-                <div class="row-cn">
-                    <strong>Patrizia</strong>
-                    <p class="text-config-2">Ultimo accesso oggi 20/11/2020 alle 17:10:00</p>
-                </div>
-                <div class="row-dx">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </div>
-            </div>
-
-            <!-- parte dove viene visualizzata la conversazione -->
-            <div class="contenitore-messaggio"></div>
-            <!-- ci saranno tanti div quanti sono le conversazioni attive in questo 8 -->
-
-            <!-- parte dove inseriamo il messaggio -->
-            <div class="row insert-message">
-                <div class="row-sx">
-                    <i class="far fa-grin"></i>
-                </div>
-                <div class="row-cn">
-                    <input type="text" name="" id="" placeholder="Scrivi un nuovo messaggio">
-                </div>
-                <div class="row-dx">
-                    <i class="fas fa-microphone-alt"></i>
-                </div>
-            </div>
-
-        </div>
-        
     </div>
 
 
