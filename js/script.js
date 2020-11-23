@@ -2,8 +2,6 @@ var app = new Vue ({
     el: '#root',
     data: {
       contatti: [
-        // status mi servirà in seguito per la generazione della risposta automatica, da inserire all'interno di una funzione
-        //messages mi serve per mostarle quando clicco su una chat attiva
         {
           name: "Michele",
           avatar: "img/avatar_1.jpg",
@@ -259,9 +257,16 @@ var app = new Vue ({
         }
       ],
 
-    // per ricercare il nome di un contatto creare un @keyup nell'input. Prima bisogna creare:
-    // 1.creare una variabile che legga l'input dell'utente, ovviamente all'inizio sarà vuoto
-    // 2.creare un arry nel quale verrano inseriri i nomi trovati (all'inizio sarà vuoto)
+    //   Milestone 2
+      indice: 0,
+
+
+    /*Milestone 3 per ricercare il nome di un contatto creare un @keyup nell'input. Prima bisogna creare:
+    1.creare una variabile che legga l'input dell'utente, ovviamente all'inizio sarà vuoto
+    2.creare un arry nel quale verrano inseriri i nomi trovati (all'inizio sarà vuoto)*/
+
+    
+
 
     }
   })

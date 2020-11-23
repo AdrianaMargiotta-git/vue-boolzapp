@@ -194,7 +194,7 @@ body { /* per centrare il container */
     width: 100%;
     height: 50px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
@@ -206,7 +206,6 @@ body { /* per centrare il container */
     line-height: 50px;
     border-left: 1px solid white;
 } 
-
 
 .container-dx .row .row-cn{
     width: calc(100% - 150px);
@@ -228,7 +227,32 @@ body { /* per centrare il container */
 /************particular rules for container-dx ***********/
     /* row information-chat */
 .container-dx .row.information-chat{
-    background-color: #eaeaea;
+    /* parti commentate incorporate a row */
+    /* width: 100%; */
+    /* background-color: #eaeaea; */
+    background-color: red;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.container-dx .information-chat .contatti-information{
+    display: flex;
+    align-items: center;
+}
+
+.information-chat .contatti-information .row-dx-information {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 50px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 .icon-circle-due{
