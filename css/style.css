@@ -255,16 +255,16 @@ body { /* per centrare il container */
     cursor: pointer;
 }
 
-.icon-circle-due{
+/* .icon-circle-due{
     width: 44px;
     height: 44px;
     border-radius: 50%;
     margin: 4px auto auto 8px;
-}
+} */
 
-.text-config-2{
+/* .text-config-2{
     color: #447587;
-}
+} */
 
     /* contenitore-messagio */
 .contenitore-messaggio{
@@ -274,6 +274,24 @@ body { /* per centrare il container */
     padding: 40px 60px;
     /* background-color: red; */
     background-image: url(../img/mine.jpg);
+}
+
+.contenitore-messaggio .utente{
+    display: flex;
+    flex-direction: column;
+    max-width: 40px;
+    padding: 8px;
+    border-radius: 8px;
+    justify-content: flex-start;
+}
+
+.contenitore-messaggio .amico{
+    display: flex;
+    flex-direction: column;
+    max-width: 40px;
+    padding: 8px;
+    border-radius: 8px;
+    justify-content: flex-end;
 }
 
     /* row insert-message */

@@ -20,13 +20,13 @@ var app = new Vue ({
                 status: 'sent'
             },
             {
-                message:'Ciao come va?',
+                message:'Ciao amico tutto bene, che fai stasera?',
                 date: '22/11/2020',
                 time: '16.58',
                 status: 'received'
             },
             {
-                message:'Tutto bene grazie e tu?',
+                message:'Vado al cinema',
                 date: '22/11/2020',
                 time: '17.50',
                 status: 'sent'

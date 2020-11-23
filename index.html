@@ -100,8 +100,19 @@
                 <!-- fine modifica -->
 
                 <!-- parte dove viene visualizzata la conversazione -->
-                <div class="contenitore-messaggio"></div>
+                <!-- inzio modifica 2 -->
+                <div class="contenitore-messaggio" id="sezione-chat" ref="sezione-chat">
+                    <div class="chat-container" v-for='(oggetto, i) in contatti[indice].messages'>
+                        <div :class="oggetto.status == 'sent' ? 'utente' : 'amico'">
+                            <p v-html="oggetto.message"> {{oggetto.message}}</p>
+                            <div class="stato-messaggio">
+                                <span>{{oggetto.time}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ci saranno tanti div quanti sono le conversazioni attive in questo 8 -->
+                <!-- fine modifica 2 -->
 
                 <!-- parte dove inseriamo il messaggio -->
                 <div class="row insert-message">
