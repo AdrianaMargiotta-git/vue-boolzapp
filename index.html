@@ -60,7 +60,7 @@
 
                 <!-- parte contatti attivi-->
                 <div class="conversazioni">
-                    <div class="sezione" v-for="(contatti, i) in contatti" v-if="contatti.visible">
+                    <div class="sezione" v-for="(contatti, i) in contatti" v-if="contatti.visible" :class="indice == i ? 'active' : 'null'" @click='conversazione(i)'>
                         <div class="contatti">
                             <div class="row-sx-immagine" :style="{ 'background-image': 'url(' + contatti.avatar  + ')' }"></div>
                             <div>
@@ -86,8 +86,7 @@
                         <div class="row-dx-information" :style="{ 'background-image': 'url(' + contatti[indice].avatar  + ')' }"> </div>
                         <div>
                             <strong>{{contatti[indice].name}}</strong>
-                            <!-- <p>{{contatti[indice].date}}</p> -->
-                            <p>Inserire la data</p>
+                            <p>Online</p>
                         </div>
                     </div>
     
