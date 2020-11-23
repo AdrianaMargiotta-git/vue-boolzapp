@@ -65,7 +65,7 @@
                             <div class="row-sx-immagine" :style="{ 'background-image': 'url(' + contatti.avatar  + ')' }"></div>
                             <div>
                                 <strong>{{contatti.name}}</strong>
-                                <p class="text-config" v-html="contatti.messages[contatti.messages.length - 1].message">{{ contatti.messages[contatti.messages.length - 1].message }}</p>
+                                <p class="text-config">{{ contatti.messages[contatti.messages.length - 1].message }}</p>
                             </div>
                         </div>
                         <div>
@@ -103,7 +103,7 @@
                 <div class="contenitore-messaggio" id="sezione-chat" ref="sezione-chat">
                     <div class="chat-container" v-for='(oggetto, i) in contatti[indice].messages'>
                         <div :class="oggetto.status == 'sent' ? 'utente' : 'amico'">
-                            <p v-html="oggetto.message"> {{oggetto.message}}</p>
+                            <p> {{oggetto.message}}</p>
                             <div class="stato-messaggio">
                                 <span>{{oggetto.time}}</span>
                             </div>
