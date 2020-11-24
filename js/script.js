@@ -2,6 +2,7 @@ var app = new Vue ({
     el: '#root',
     data: {
       contatti: [
+        //   visible per adesso mi serve solo per provare lo scroll sx
         {
           name: "Michele",
           avatar: "img/avatar_1.jpg",
@@ -106,7 +107,7 @@ var app = new Vue ({
                 status: 'sent'
             },
             {
-                message:"Qual'e il colmo per un polizziotto informatico? &#128512",
+                message:"Qual'e il colmo per un polizziotto informatico?",
                 date: '22/11/2020',
                 time: '10.35',
                 status: 'sent'
@@ -122,18 +123,6 @@ var app = new Vue ({
                 date: '22/11/2020',
                 time: '12.10',
                 status: 'sent'
-            },
-            {
-                message:'&#128514',
-                date: '22/11/2020',
-                time: '12.15',
-                status: 'sent'
-            },
-            {
-                message:'&#129315',
-                date: '22/11/2020',
-                time: '12.30',
-                status: 'received'
             }
             
           ]
@@ -299,12 +288,8 @@ var app = new Vue ({
           ]
         }
       ],
-
-    //   Milestone 2
-    /*cliccando sulla chat vedo quella corrispondente;
-    con header con dati relativi a chat attiva;
-    relativa chat in elenco rimane selezionata*/
-      indice: 0, //si aggirona qualvolta clicchiamo su un contatto per farne apparire la chat
+      indice: 0, //si aggirona qualvolta clicchiamo su un contatto per farne apparire la chat (milestone 2)
+      nuovoMessaggio: '', //legge/resetta l'input
 
 
     /*Milestone ? per ricercare il nome di un contatto creare un @keyup nell'input. Prima bisogna creare:
@@ -316,6 +301,49 @@ var app = new Vue ({
         //al click sul contatto vengono generate le rispettive chat. Il v-for porta con se l'indice i che corrisponde al singolo contatto, esso poi verrà salvato in indice (riga 261)
         conversazione: function(i){
             this.indice = i;
+        },
+        //Milestone 3
+        userIndice: function(){
+            const date = new Date().toLocaleDateString();
+            // const time = new Data().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            let userMessaggio = {
+                message: this.nuovoMessaggio,
+                date,
+                // time,
+                status: 'sent'
+            };
+            this.nuovoMessaggio = '', //reset del campo input
+            //ritardo di 1s per la risposta automatica
+            setTimeout(() => {
+                let rispostaAutomatica = ['Ok', 'Ci vediamo dopo', 'A presto!'];
+                let rispostaRandom = Math.round((Math.random() * 2));
+                let userMessaggio = {
+                    message: this.nuovoMessaggio,
+                    date,
+                    // time,
+                    status: 'received'
+                };
+                this.contatti[this.indice].messages.push(userMessaggio);
+            }, 1000);
         }
     }
   })
+
+
+
+
+
+
+/******************CONSEGNA ESERCIZIO******************/
+  //Milestone 1 : realizzare il layout
+  //Milestone 2:
+    /*cliccando sulla chat vedo quella corrispondente;
+    con header con dati relativi a chat attiva;
+    relativa chat in elenco rimane selezionata*/
+  //Milestone 3:
+    /*l’utente può scrivere nel campo di input in basso;
+    al click sull’invio succedono due cose:
+        1. il mio msg viene inviato alla chat relativa;
+        2. ottengo un msg di risposta automatico;
+    il msg di risposta non è istantaneo, ma viene dopo 1 secondo;
+    chiaramente tutto ciò viene agganciato/creato solo nella chat dove stò chattando; quindi ogni chat avrà i proprio messaggi.*/

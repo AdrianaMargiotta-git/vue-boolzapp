@@ -160,6 +160,7 @@ body { /* per centrare il container */
 .container-sx .conversazioni .contatti{
     display: flex;
     align-items: center;
+    max-width: 70%;
 }
     
 .row-sx-immagine {
