@@ -298,18 +298,18 @@ var app = new Vue ({
 
     },
     methods: {
-        //al click sul contatto vengono generate le rispettive chat. Il v-for porta con se l'indice i che corrisponde al singolo contatto, esso poi verrà salvato in indice (riga 261)
+        //Milestone 2, al click sul contatto vengono generate le rispettive chat. Il v-for porta con se l'indice i che corrisponde al singolo contatto, esso poi verrà salvato in indice (riga 261)
         conversazione: function(i){
             this.indice = i;
         },
         //Milestone 3
-        userIndice: function(){
+        userIndice: function(indice){
             const date = new Date().toLocaleDateString();
-            // const time = new Data().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             let userMessaggio = {
                 message: this.nuovoMessaggio,
                 date,
-                // time,
+                time,
                 status: 'sent'
             };
             this.contatti[this.indice].messages.push(userMessaggio); //pusho
@@ -321,7 +321,7 @@ var app = new Vue ({
                 let userMessaggio = {
                     message: rispostaAutomatica[rispostaRandom],
                     date,
-                    // time,
+                    time,
                     status: 'received'
                 };
                 this.contatti[this.indice].messages.push(userMessaggio); //pusho

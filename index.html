@@ -80,7 +80,6 @@
             <div class="container-dx">
 
                 <!-- parte informazione chat visualizzata -->
-                <!-- modifica -->
                 <div class="row information-chat">
                     <div class="contatti-information">
                         <div class="row-dx-information" :style="{ 'background-image': 'url(' + contatti[indice].avatar  + ')' }"> </div>
@@ -96,22 +95,20 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <!-- fine modifica -->
 
                 <!-- parte dove viene visualizzata la conversazione -->
-                <!-- inzio modifica 2 -->
                 <div class="contenitore-messaggio" id="sezione-chat" ref="sezione-chat">
                     <div class="chat-container" v-for='(oggetto, i) in contatti[indice].messages'>
                         <div :class="oggetto.status == 'sent' ? 'utente' : 'amico'">
                             <p> {{oggetto.message}}</p>
                             <div class="stato-messaggio">
+                                <span>{{oggetto.date}}</span>
                                 <span>{{oggetto.time}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- ci saranno tanti div quanti sono le conversazioni attive in questo 8 -->
-                <!-- fine modifica 2 -->
 
                 <!-- parte dove inseriamo il messaggio -->
                 <div class="row insert-message">
