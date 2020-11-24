@@ -312,18 +312,19 @@ var app = new Vue ({
                 // time,
                 status: 'sent'
             };
+            this.contatti[this.indice].messages.push(userMessaggio); //pusho
             this.nuovoMessaggio = '', //reset del campo input
             //ritardo di 1s per la risposta automatica
             setTimeout(() => {
                 let rispostaAutomatica = ['Ok', 'Ci vediamo dopo', 'A presto!'];
-                let rispostaRandom = Math.round((Math.random() * 2));
+                let rispostaRandom = Math.round(Math.random() * 2);
                 let userMessaggio = {
-                    message: this.nuovoMessaggio,
+                    message: rispostaAutomatica[rispostaRandom],
                     date,
                     // time,
                     status: 'received'
                 };
-                this.contatti[this.indice].messages.push(userMessaggio);
+                this.contatti[this.indice].messages.push(userMessaggio); //pusho
             }, 1000);
         }
     }
