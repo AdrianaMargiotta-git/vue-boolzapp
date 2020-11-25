@@ -289,20 +289,15 @@ var app = new Vue ({
         }
       ],
       indice: 0, //si aggirona qualvolta clicchiamo su un contatto per farne apparire la chat (milestone 2)
-      nuovoMessaggio: '', //legge/resetta l'input
-
-
-    /*Milestone ? per ricercare il nome di un contatto creare un @keyup nell'input. Prima bisogna creare:
-    1.creare una variabile che legga l'input dell'utente, ovviamente all'inizio sarà vuoto
-    2.creare un arry nel quale verrano inseriri i nomi trovati (all'inizio sarà vuoto)*/
-
+      nuovoMessaggio: '', //legge-resetta l'input per l'inserimento(milestone 3)
+      inputRicerca: '', //legge l'input per la ricerca (milestone 4)
     },
     methods: {
         //Milestone 2, al click sul contatto vengono generate le rispettive chat. Il v-for porta con se l'indice i che corrisponde al singolo contatto, esso poi verrà salvato in indice (riga 261)
         conversazione: function(i){
             this.indice = i;
         },
-        //Milestone 3
+        //Milestone 3: stampo a schermo il messaggio scritto nell'input
         userIndice: function(indice){
             const date = new Date().toLocaleDateString();
             const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -326,13 +321,19 @@ var app = new Vue ({
                 };
                 this.contatti[this.indice].messages.push(userMessaggio); //pusho
             }, 1000);
-        }
-    }
+        },
+        //Milestone 3: cerco un contatto
+        ricercaContatto: function(){
+            this.contatti.forEach((item) => {
+                if (item.name.toLowerCase().includes(this.inputRicerca)){
+                    item.visible = true;
+                } else {
+                    item.visible = false;
+                }
+            });
+        },
+    },
   })
-
-
-
-
 
 
 /******************CONSEGNA ESERCIZIO******************/
@@ -348,3 +349,6 @@ var app = new Vue ({
         2. ottengo un msg di risposta automatico;
     il msg di risposta non è istantaneo, ma viene dopo 1 secondo;
     chiaramente tutto ciò viene agganciato/creato solo nella chat dove stò chattando; quindi ogni chat avrà i proprio messaggi.*/
+  //Milestone 4:
+    /*l’utente può scrivere nel campo di input a sx;
+    alla digitazione, ad ogni carattere digitato il istato si aggiorna in base alla corrispondenza della stringa scritta nell’input, rispetto al nomeContatto/Chat*/
