@@ -322,7 +322,7 @@ var app = new Vue ({
                 this.contatti[this.indice].messages.push(userMessaggio); //pusho
             }, 1000);
         },
-        //Milestone 3: cerco un contatto
+        //Milestone 4: cerco un contatto
         ricercaContatto: function(){
             this.contatti.forEach((item) => {
                 if (item.name.toLowerCase().includes(this.inputRicerca)){

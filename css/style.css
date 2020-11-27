@@ -107,17 +107,23 @@ body { /* per centrare il container */
     background-color: #76dcff;
 }
 
+.container-sx .row.colore-celeste .row-sx i {
+    font-size: 30px;
+    color: #76dcff;
+    border-radius: 45%;
+    background-color: white;
+    margin-top: 10px;
+}
+
 #notifica{
     text-decoration: underline;
     color: #447587;
 }
 
-.container-sx .row.colore-celeste .row-sx i {
-    padding: 0 5px;
-    font-size: 28px;
-    color: #76dcff;
-    border-radius: 45%;
-    background-color: white;
+.container-sx .row.colore-celeste .row-cn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
     /* row searchbar */
@@ -182,6 +188,7 @@ body { /* per centrare il container */
 
 .text-config{
     color: #b5b9bb;
+    font-size: 10px;
 }
 
 .conversazioni .sezione span {
@@ -237,10 +244,11 @@ body { /* per centrare il container */
 }
 
 .information-chat .contatti-information .row-dx-information {
-    height: 50px;
-    width: 50px;
+    height: 44px;
+    width: 44px;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
