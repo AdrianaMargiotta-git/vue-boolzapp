@@ -97,13 +97,20 @@
                 </div>
 
                 <!-- parte dove viene visualizzata la conversazione -->
-                <div class="contenitore-messaggio" id="sezione-chat" ref="sezione-chat">
-                    <div class="chat-container" v-for='(oggetto, i) in contatti[indice].messages'>
+                <div class="contenitore-messaggio" id="sezione-chat" ref="sezione-chat" >
+                    <div class="chat-container" v-for='(oggetto, i) in contatti[indice].messages' id="containerdieci">
                         <div :class="oggetto.status == 'sent' ? 'utente' : 'amico'">
                             <p> {{oggetto.message}}</p>
                             <div class="stato-messaggio">
                                 <span>{{oggetto.date}}</span>
                                 <span>{{oggetto.time}}</span>
+                            </div>
+                            <div class="dropdown" :class="check == i ? dropToggle : 'null'" @click="toggleDropMenu(i)">
+                                <i class="fas fa-chevron-down"></i>
+                                <ul class="dropdown-menu" :class="check == i ? dropToggle + ' ' + dropDownPosition : 'null'">
+                                    <li>Inoltra</li>
+                                    <li @click="deleteMessage(i)">Cancella</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

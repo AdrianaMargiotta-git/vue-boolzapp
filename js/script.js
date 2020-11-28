@@ -291,6 +291,12 @@ var app = new Vue ({
       indice: 0, //si aggirona qualvolta clicchiamo su un contatto per farne apparire la chat (milestone 2)
       nuovoMessaggio: '', //legge-resetta l'input per l'inserimento(milestone 3)
       inputRicerca: '', //legge l'input per la ricerca (milestone 4)
+      //Bonus cancellare un messaggio
+      index: 0, //controllo eliminazione messaggio
+      dropToggle: '', //visibilità toggle-menu
+      check: -1, //visibilità toggle-menu
+      dropDownPosition: 'null', //posizione dropdown
+      checkDelBtn: false, //controllo eliminazione messaggio
     },
     methods: {
         //Milestone 2, al click sul contatto vengono generate le rispettive chat. Il v-for porta con se l'indice i che corrisponde al singolo contatto, esso poi verrà salvato in indice (riga 261)
@@ -332,6 +338,19 @@ var app = new Vue ({
                 }
             });
         },
+        //Bonus cancellare un messaggio
+        toggleDropMenu: function(i){
+            this.check = i;
+            if (this.dropToggle == '') {
+                this.dropToggle = 'active';
+            } else if (this.dropToggle == 'active'){
+                this.dropToggle = '';
+            };
+        },
+        deleteMessage: function(i) {
+            this.contatti[this.indice].messages.splice(this.index,1);
+            this.checkDelBtn = false;
+        }
     },
   })
 
